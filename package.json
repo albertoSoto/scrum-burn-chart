@@ -2,7 +2,12 @@
   "name": "@scrum-tool/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx build scrum-tool",
+    "test": "nx test scrum-tool",
+    "serve": "nx serve scrum-tool",
+    "lint": "nx lint scrum-tool"
+  },
   "private": true,
   "dependencies": {
     "lucide-react": "^0.518.0",
