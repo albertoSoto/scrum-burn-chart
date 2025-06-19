@@ -1,101 +1,118 @@
-# ScrumTool
+# Scrum Burn Chart Tool
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+![Scrum Burn Chart](https://img.shields.io/badge/Scrum-Burn%20Chart-blue)
+![React](https://img.shields.io/badge/React-19.0.0-61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8.2-3178C6)
+![Nx](https://img.shields.io/badge/Nx-21.2.0-143055)
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+A modern web application for tracking and visualizing sprint progress using burndown charts. This tool helps Scrum teams monitor their velocity and forecast sprint completion.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## Features
 
-## Run tasks
+- Interactive burndown charts using Recharts
+- Sprint progress visualization
+- Responsive design for desktop and mobile
+- Modern React implementation with TypeScript
 
-To run the dev server for your app, use:
+## Live Demo
+
+WIP
+
+## Technology Stack
+
+- **Frontend**: React 19, TypeScript
+- **Routing**: React Router 6
+- **Styling**: Tailwind CSS
+- **Charts**: Recharts
+- **Build Tool**: Vite
+- **Monorepo Management**: Nx
+- **Deployment**: GitHub Pages
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+   ```sh
+   git clone https://github.com/[your-username]/scrum-burn-check.git
+   cd scrum-burn-check
+   ```
+
+2. Install dependencies
+   ```sh
+   npm install
+   ```
+
+3. Start the development server
+   ```sh
+   npm run serve
+   # or
+   npx nx serve scrum-tool
+   ```
+
+4. Open your browser and navigate to `http://localhost:4200`
+
+## Build
+
+To create a production build:
 
 ```sh
-npx nx serve scrum-tool
-```
-
-To create a production bundle:
-
-```sh
+npm run build
+# or
 npx nx build scrum-tool
 ```
 
-To see all available targets to run for a project, run:
+## Project Structure
 
-```sh
-npx nx show project scrum-tool
+This project is built using Nx monorepo structure:
+
+```
+scrum-burn-check/
+├── apps/
+│   └── scrum-tool/        # Main application
+│       ├── src/           # Source files
+│       ├── public/        # Static assets
+│       └── ...
+├── .github/
+│   └── workflows/         # GitHub Actions workflows
+└── ...
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+## Deployment
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+The application is automatically deployed to GitHub Pages using GitHub Actions. Any push to the main branch triggers the deployment workflow.
 
-## Add new projects
+### Manual Deployment
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+If you want to deploy manually:
 
-Use the plugin's generator to create new projects.
+1. Build the application
+   ```sh
+   npm run build
+   ```
 
-To generate a new application, use:
+2. Deploy to GitHub Pages
+   ```sh
+   # If you have gh-pages CLI installed
+   gh-pages -d apps/scrum-tool/dist
+   ```
 
-```sh
-npx nx g @nx/react:app demo
-```
+## Contributing
 
-To generate a new library, use:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-```sh
-npx nx g @nx/react:lib mylib
-```
+## License
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+---
 
-## Set up CI!
+<a alt="Built with Nx" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-### Step 1
+*This project was generated and is managed using [Nx](https://nx.dev), a smart, fast and extensible build system.*
 
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
